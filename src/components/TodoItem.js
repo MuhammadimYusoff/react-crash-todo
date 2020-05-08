@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from "prop-types";
 
-export class TodoItem extends Component {
+export default class TodoItem extends Component {
     getStyle = () => {
         return {
             background: '#f4f4f4',
@@ -30,9 +30,11 @@ export class TodoItem extends Component {
     }
 }
 
-//? Check Prop-types
-TodoItem.propTypes = { //? The first should be the name of the class
-    todo: PropTypes.object.isRequired
+//? Check Prop-types Required
+TodoItem.propTypes = {  //? The first should be the name of the class
+    todo: PropTypes.object.isRequired,
+    markComplete:PropTypes.func.isRequired,
+    delTodo:PropTypes.func.isRequired
 }
 
 const btnStyle = {
@@ -44,5 +46,3 @@ const btnStyle = {
     cursor: 'pointer',
     float: 'right'
 }
-
-export default TodoItem

@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import PropTypes from "prop-types";
 
 export default class AddTodo extends Component {
     render() {
@@ -23,6 +24,11 @@ export default class AddTodo extends Component {
         this.props.addTodo(this.state.title);
         this.setState({ title: ''});
     }
+}
 
-
+//? Check Prop-types Required
+AddTodo.propTypes = {  //? The first should be the name of the class
+    addTodo: PropTypes.func.isRequired,
+    markComplete:PropTypes.func.isRequired,
+    delTodo:PropTypes.func.isRequired
 }
